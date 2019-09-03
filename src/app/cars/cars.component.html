@@ -1,2 +1,16 @@
-<app-car></app-car>
-<app-car></app-car>
+<input type="text" class="form-control" [(ngModel)]="carName">
+<button class="btn btn-primary" (click)="addCar()">Добавити автомобіль</button>
+<p *ngIf="!canAddCarStatus; else successStatus">Не додано!</p>
+<ng-template #successStatus>
+  <p>Додано!</p>
+</ng-template>
+
+<!-- <p>{{canAddCarStatus}}</p> -->
+<hr>
+<app-car *ngFor="let car of cars"></app-car>
+
+
+<hr>
+<!--
+<input type="text" class="form-control" (keyup.enter)="onKeyUp($event)">
+<p>{{inputText}}</p> -->

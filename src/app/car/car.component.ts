@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarComponent implements OnInit {
 
+  carName = 'Ford';
+  carYear = 2015;
+
   constructor() { }
 
   ngOnInit() {
