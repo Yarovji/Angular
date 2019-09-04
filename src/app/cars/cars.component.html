@@ -9,6 +9,11 @@
 <hr>
 <app-car *ngFor="let car of cars"></app-car>
 
+<ul>
+  <li *ngFor="let item of items">
+    {{item | date}}
+  </li>
+</ul>
 
 <hr>
 <!--
