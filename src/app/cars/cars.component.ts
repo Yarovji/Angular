@@ -9,10 +9,10 @@ export class CarsComponent implements OnInit {
 
   cars: Array<{name: string, year: number}> = [
     {name: 'Ford', year: 2017},
-    {name: 'Audi', year: 2017},
-    {name: 'BMW', year: 2017},
-    {name: 'Renault', year: 2017},
-    {name: 'Skoda', year: 2017}
+    // {name: 'Audi', year: 2017},
+    // {name: 'BMW', year: 2017},
+    // {name: 'Renault', year: 2017},
+    // {name: 'Skoda', year: 2017}
   ];
 
   constructor() { }
