@@ -7,16 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarsComponent implements OnInit {
 
-  canAddCarStatus = false;
-  // inputText = '';
-  carName = '';
-  cars = ['Ford', 'Audi', 'BMW', 'Renault', 'Skoda'];
-  items = [
-    new Date(2015, 3, 23),
-    new Date(2017, 5, 30),
-    new Date(2006, 1, 4),
-    new Date(2016, 4, 4),
-    new Date(2000, 11, 10)
+  cars: Array<{name: string, year: number}> = [
+    {name: 'Ford', year: 2017},
+    {name: 'Audi', year: 2017},
+    {name: 'BMW', year: 2017},
+    {name: 'Renault', year: 2017},
+    {name: 'Skoda', year: 2017}
   ];
 
   constructor() { }
@@ -24,14 +20,8 @@ export class CarsComponent implements OnInit {
   ngOnInit() {
   }
 
-  addCar() {
-    this.canAddCarStatus = true;
-    this.cars.push(this.carName);
-    this.carName = '';
+  updateCarList(car: {name: string, year: number}) {
+    this.cars.push(car);
   }
-
-  // onKeyUp(event: Event) {
-  //   this.inputText = (event.target as HTMLInputElement).value;
-  // }
 
 }
