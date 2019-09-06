@@ -11,3 +11,17 @@
 <div class="container">
   <h1 appBg>{{text}}</h1>
 </div>
+
+
+<ul class="list-group">
+  <li *ngFor="let item of items" class="list-group-item" (click)="onClick(item)">
+    {{item}}
+  </li>
+</ul>
+
+<div [ngSwitch]="current">
+  <p *ngSwitchCase="1">1</p>
+  <p *ngSwitchCase="2">2</p>
+  <p *ngSwitchCase="3">3</p>
+  <p *ngSwitchDefault>def</p>
+</div>
