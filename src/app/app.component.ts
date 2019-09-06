@@ -15,18 +15,20 @@ export class AppComponent {
   //   this.current = num;
   // }
 
-  name = 'WebForMyFuture';
-  pi = Math.PI;
-  money = 350;
-  date = new Date();
-  amount = 0.45;
-  object = {
-    fn: 'Yaro',
-    sn: 'Vji',
-    about: {
-      old: 29,
-      work: [2009, 2019]
-    }
-  };
+  // name = 'WebForMyFuture';
+  // pi = Math.PI;
+  // money = 350;
+  // date = new Date();
+  // amount = 0.45;
+  // object = {
+  //   fn: 'Yaro',
+  //   sn: 'Vji',
+  //   about: {
+  //     old: 29,
+  //     work: [2009, 2019]
+  //   }
+  // };
+
+  num = 4;
 
 }
