@@ -1,13 +1,14 @@
-import { Component, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { reject } from 'q';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-@ViewChild('myForm') myForm: NgForm;
+export class AppComponent implements OnInit {
 
   answers = [{
     type: 'yes',
@@ -18,30 +19,33 @@ export class AppComponent {
     text: 'ні'
   }];
 
-  defoultcountry = 'ua';
-  defoultanswer = 'yes';
+  myform: FormGroup;
 
-  formData = {};
-  isSubmited = false;
-
-  submitForm() {
-    console.log(this.myForm.value);
-    this.formData = this.myForm.value;
-    this.isSubmited = true;
-    this.myForm.reset();
-  }
-
-  addRandomMail() {
-    // this.myForm.setValue({
-    //   email: 'ggg@ggg',
-    //   pass: '123',
-    //   country: 'pl',
-    //   question: 'no'
-    // });
-    this.myForm.form.patchValue({
-      email: 'sss@sss'
+  ngOnInit() {
+    this.myform = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email], this.checkForEmail),
+      pass: new FormControl('', Validators.required),
+      country: new FormControl('ua'),
+      answer: new FormControl('')
     });
-
-
   }
+
+  onSubmit() {
+    console.log(this.myform)
+  }
+
+  checkForEmail(control: FormControl): Promise<any> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (control.value === 'test@i.ua') {
+          resolve({
+            emailIsUsed: true
+          });
+        } else {
+          resolve(null);
+        }
+      }, 3000);
+    });
+  }
+
 }
