@@ -1,92 +1,26 @@
-
-<h1 style="margin: 50px;">{{ num | apppow: 3: '_=_' }}</h1>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="col-xs-8 col-xs-offset-2">
-  <h2>{{ name }}</h2>
-  <h2>{{ name | lowercase }}</h2>
-  <h2>{{ name | uppercase }}</h2>
-  <h2>{{ name | slice:0:3 }}</h2>
-  <h2>{{ name | slice:3 | uppercase }}</h2>
-  <hr>
-  <h2>{{ pi }}</h2>
-  <h2>{{ pi | number }}</h2>
-  <h2>{{ pi | number: '1.3-4' }}</h2>
-  <h2>{{ pi | number: '1.2-2' }}</h2>
-  <hr>
-  <h2>{{ money }}</h2>
-  <h2>{{ money | currency: 'EUR' }}</h2>
-  <h2>{{ money | currency: 'USD': false }}</h2>
-  <hr>
-  <h2>{{ date }}</h2>
-  <h2>{{ date | date }}</h2>
-  <h2>{{ date | date: 'fullDate' }}</h2>
-  <h2>{{ date | date: 'shortDate' }}</h2>
-  <h2>{{ date | date: 'shortTime' }}</h2>
-  <h2>{{ date | date: 'yyyy/MM/dd/hh:mm:ss' }}</h2>
-  <hr>
-  <h2>{{ amount | percent }}</h2>
-  <hr>
-  <h2>{{object}}</h2>
-  <h2>{{object | json}}</h2>
-  <h2><pre>{{object | json}}</pre></h2>
-</div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-        <app-cars></app-cars>
+<div class="col-xs-8 col-xs-offset-2">
+  <form>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control">
     </div>
-  </div>
-
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Виберіть країну</label>
+      <select class="form-control">
+        <option value="ua">Україна</option>
+        <option value="by">Білорусь</option>
+        <option value="pl">Польща</option>
+      </select>
+    </div>
+    <div class="radio" *ngFor="let ans of answers">
+      <label>
+        <input type="radio" [value]="ans.type"> {{ans.text}}
+      </label>
+    </div>
+    <button class="btn btn-success" type="submit">Зберегти</button>
+  </form>
 </div>
-
-<router-outlet></router-outlet> -->
-<!-- <div class="container">
-  <h1 appBg>{{text}}</h1>
-</div>
-
-
-<ul class="list-group">
-  <li *ngFor="let item of items" class="list-group-item" (click)="onClick(item)">
-    {{item}}
-  </li>
-</ul>
-
-<div [ngSwitch]="current">
-  <p *ngSwitchCase="1">1</p>
-  <p *ngSwitchCase="2">2</p>
-  <p *ngSwitchCase="3">3</p>
-  <p *ngSwitchDefault>def</p>
-</div> -->
