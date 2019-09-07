@@ -1,27 +1,9 @@
 <div class="col-xs-8 col-xs-offset-2">
-  <form [formGroup]="myform" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label>Email</label>
-      <input type="email" class="form-control" formControlName="email">
-    </div>
-    <div class="form-group">
-      <label>Password</label>
-      <input type="password" class="form-control" formControlName="pass">
-      <p *ngIf="myform.get('pass').invalid && myform.get('pass').touched">Пароль поганий</p>
-    </div>
-    <div class="form-group">
-      <label>Виберіть країну</label>
-      <select class="form-control" formControlName="country">
-        <option value="ua">Україна</option>
-        <option value="by">Білорусь</option>
-        <option value="pl">Польща</option>
-      </select>
-    </div>
-    <div class="radio" *ngFor="let ans of answers">
-      <label>
-        <input type="radio" [value]="ans.type" formControlName="answer"> {{ans.text}}
-      </label>
-    </div>
-    <button class="btn btn-success" type="submit" [disabled]="myform.invalid">Зберегти</button>
-  </form>
+  <button class="btn btn-primary" type="submit">Загрузити</button>
+  <hr>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let car of cars">
+      <span class="badge">{{ car.id }}</span> {{ car.name }} {{ car.color }}
+    </li>
+  </ul>
 </div>
