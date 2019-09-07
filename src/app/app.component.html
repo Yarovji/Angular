@@ -1,16 +1,18 @@
 <div class="col-xs-8 col-xs-offset-2">
-  <form>
+  <form (ngSubmit)="submitForm()" #myForm="ngForm">
     <div class="form-group">
       <label>Email</label>
-      <input type="email" class="form-control">
+      <input type="email" class="form-control" ngModel name="email" required email #mulo="ngModel">
+      <p *ngIf="mulo.invalid && mulo.touched">Введіть коректну Email-адресу</p>
+      <button class="btn btn-primary" (click)="addRandomMail()" type="button">Додати рандом мейл.</button>
     </div>
     <div class="form-group">
       <label>Password</label>
-      <input type="password" class="form-control">
+      <input type="password" class="form-control" ngModel name="pass" required>
     </div>
     <div class="form-group">
       <label>Виберіть країну</label>
-      <select class="form-control">
+      <select class="form-control" [ngModel]="defoultcountry" name="country" required>
         <option value="ua">Україна</option>
         <option value="by">Білорусь</option>
         <option value="pl">Польща</option>
@@ -18,9 +20,15 @@
     </div>
     <div class="radio" *ngFor="let ans of answers">
       <label>
-        <input type="radio" [value]="ans.type"> {{ans.text}}
+        <input type="radio" [value]="ans.type" [ngModel]="defoultanswer" name="question" required> {{ans.text}}
       </label>
     </div>
-    <button class="btn btn-success" type="submit">Зберегти</button>
+    <button class="btn btn-success" type="submit" [disabled]="!myForm.valid">Зберегти</button>
   </form>
+  <div *ngIf="isSubmited">
+    <br>
+    <pre>
+      {{ formData | json }}
+    </pre>
+  </div>
 </div>
