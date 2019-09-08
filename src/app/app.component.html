@@ -1,17 +1,15 @@
-<div class="col-xs-8 col-xs-offset-2">
-  <input type="text" class="form-control" [(ngModel)]="carName">
-  <hr>
-  <button class="btn btn-primary" type="submit" (click)="loadCars()">Загрузити</button>
-  <button class="btn btn-success" (click)="addCar()">Добавити авто</button>
-  <hr>
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let car of cars">
-      <span class="badge badge-secondary" [ngStyle]="{background: car.color}" style="color: rgb(146, 74, 74)">
-        {{ car.id }}
-      </span>
-      {{ car.name }} {{ car.color }}
-      <button class="btn btn-xs btn-info" (click)="setNewColor(car)">Зиінити колір</button>
-      <button class="btn btn-xs btn-danger" (click)="delete(car)">Видалити</button>
-    </li>
-  </ul>
+<div class="container">
+  <nav style="margin-bottom: 20px" class="navbar navbar-light bg-light" >
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item" routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}"><a class="nav-link" routerLink='/' >Головна</a></li>
+        <li class="nav-item" routerLinkActive="active" ><a routerLink='/cars' class="nav-link" >Машини</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+     <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
