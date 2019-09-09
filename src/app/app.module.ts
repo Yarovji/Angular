@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CarsService } from './cars.service';
 import { HomePageComponent } from './home-page/home-page.component';
 import { CarsPageComponent } from './cars-page/cars-page.component';
+import { CarPageComponent } from './car-page/car-page.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { CarsPageComponent } from './cars-page/cars-page.component';
     AppComponent,
     HomePageComponent,
     CarsPageComponent,
+    CarPageComponent,
 
   ],
   imports: [
